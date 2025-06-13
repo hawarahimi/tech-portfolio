@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Phishing Email Analysis</title>
-  <link rel="stylesheet" href="styles.css">
   <style>
     body {
       font-family: 'Segoe UI', sans-serif;
@@ -12,95 +11,136 @@
       color: #c9d1d9;
       margin: 0;
       padding: 2rem;
+      line-height: 1.6;
     }
 
-    section {
-      background: #161b22;
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
-      max-width: 800px;
-      margin: auto;
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: #4ee1ff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
-
-    h1, h2 {
-      color: #58a6ff;
-    }
-
-    ul {
-      padding-left: 1.2rem;
-    }
-
-    a {
-      color: #58a6ff;
+    a.back-link:hover, a.back-link:focus {
+      color: #00ffff;
       text-decoration: underline;
     }
 
-    p, li {
-      line-height: 1.6;
+    h1 {
+      font-size: 2.8rem;
+      color: #4ee1ff;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 8px #4ee1ff;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: #39c0ed;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #39c0ed;
+      padding-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+      color: #c9d1d9;
+    }
+
+    ul, ol {
+      font-size: 1rem;
+      margin-left: 1.5rem;
+      color: #8ab8f9;
+    }
+
+    a {
+      color: #4ee1ff;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    a:hover, a:focus {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+    pre {
+      background-color: #011627;
+      color: #7fffd4;
+      padding: 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #0ff;
+      font-family: 'Source Code Pro', monospace, monospace;
+      font-size: 1rem;
+      overflow-x: auto;
+      user-select: text;
+      margin-bottom: 2rem;
+      line-height: 1.4;
+      white-space: pre-wrap;
+      word-break: break-word;
     }
   </style>
 </head>
 <body>
-  <section>
-    <h1>Phishing Email Analysis</h1>
 
-<p>In this project, I analyzed a phishing email to show how attackers exploit user trust, manipulate attention, and bypass basic filters. The goal was to break down the threat elements and offer insights for everyday users and IT teams.</p>
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
 
-<h2>Sample Phishing Email</h2>
-<pre style="background:#1e1e1e; color:#81d4fa; padding:1rem; border-radius:8px; overflow-x:auto;">
-From: jira-notification@secure-update.com
-To: employee@example.com
-Subject: Immediate Action Required: JIRA Account Password Reset
+  <h1>Phishing Email Analysis</h1>
 
-Dear Employee,
+  <p>In this project, I analyzed a phishing email to show how attackers exploit user trust, manipulate attention, and bypass basic filters. The goal was to break down the threat elements and offer insights for everyday users and IT teams.</p>
 
-Our security system has detected unusual login attempts on your JIRA account. To protect your data, please reset your password within the next 24 hours.
+  <h2>Objective</h2>
+  <ul>
+    <li>Understand phishing attack structure</li>
+    <li>Identify spoofed sender details and malicious URLs</li>
+    <li>Document social engineering techniques</li>
+    <li>Provide clear, actionable recommendations</li>
+  </ul>
 
-Reset your password here:  
-http://secure-update-jira.com/reset-password
+  <h2>Methodology</h2>
+  <ol>
+    <li>Created a realistic phishing email sample.</li>
+    <li>Inspected sender email headers and reply-to addresses.</li>
+    <li>Hovered over and traced embedded links for redirection or mismatches.</li>
+    <li>Recognized urgency, impersonation, and manipulation tactics.</li>
+  </ol>
 
-Failure to reset your password will result in temporary suspension of your account.
+  <h2>Phishing Email Sample</h2>
+  <pre>
+From: "JIRA Notifications" &lt;jira-notify@supportservices.com&gt;
+To: user@example.com
+Subject: Action Required Immediately: Password Reset Request
 
-Thank you for your prompt attention.
+Dear User,
 
-Best regards,  
-JIRA Security Team
+We detected suspicious activity on your account. Please reset your password immediately to avoid suspension.
+
+Click here to reset your password:
+http://secure-support-reset.com/login?user=example
+
+If you did not request this, please ignore this message.
+
+Best Regards,
+JIRA Support Team
 </pre>
 
-<h2>Objective</h2>
-<ul>
-  <li>Understand phishing attack structure</li>
-  <li>Identify spoofed sender details and malicious URLs</li>
-  <li>Document social engineering techniques</li>
-  <li>Provide clear, actionable recommendations</li>
-</ul>
+  <h2>Key Findings</h2>
+  <ul>
+    <li><strong>Sender Spoofing:</strong> The sender’s email domain impersonated a trusted service but originated from an unrelated server.</li>
+    <li><strong>Deceptive Links:</strong> URLs were disguised to appear legitimate, but redirected to suspicious destinations.</li>
+    <li><strong>Social Engineering:</strong> The message used urgency (“Action Required Immediately”) and impersonated internal tools like JIRA.</li>
+    <li><strong>Missing Personalization:</strong> The email lacked specific user references, a common phishing indicator.</li>
+  </ul>
 
-<h2>Methodology</h2>
-<ol>
-  <li>Reviewed the email headers and sender domain for inconsistencies.</li>
-  <li>Examined the link to check for suspicious redirects and mismatched URLs.</li>
-  <li>Analyzed the language used to identify urgency and impersonation tactics.</li>
-  <li>Compared message personalization and legitimacy cues.</li>
-</ol>
+  <h2>Lessons Learned</h2>
+  <ul>
+    <li>Check email headers and don’t trust display names alone.</li>
+    <li>Hover over links and compare visible text to the actual URL.</li>
+    <li>Be cautious of fear-based or urgent language in messages.</li>
+    <li>Educate teams regularly on identifying suspicious communications.</li>
+  </ul>
 
-<h2>Key Findings</h2>
-<ul>
-  <li><strong>Sender Spoofing:</strong> The sender domain <code>secure-update.com</code> is unrelated to the official JIRA domain.</li>
-  <li><strong>Deceptive Links:</strong> The link directs to <code>secure-update-jira.com</code>, which is not a verified Atlassian site.</li>
-  <li><strong>Social Engineering:</strong> The email uses urgency (“Immediate Action Required”) to prompt quick user response.</li>
-  <li><strong>Missing Personalization:</strong> The greeting is generic (“Dear Employee”) instead of using the recipient’s name.</li>
-</ul>
-
-<h2>Lessons Learned</h2>
-<ul>
-  <li>Always verify sender email domains, not just display names.</li>
-  <li>Hover over links to inspect actual URLs before clicking.</li>
-  <li>Be cautious of urgent language designed to pressure quick action.</li>
-  <li>Regular security awareness training helps users spot these red flags.</li>
-</ul>
-
-    <p>🔗 <a href="index.html">← Back to Portfolio Home</a></p>
-  </section>
 </body>
 </html>
