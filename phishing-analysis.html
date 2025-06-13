@@ -23,7 +23,9 @@
       font-size: 1.1rem;
       transition: color 0.3s ease;
     }
-    a.back-link:hover, a.back-link:focus {
+
+    a.back-link:hover,
+    a.back-link:focus {
       color: #00ffff;
       text-decoration: underline;
     }
@@ -61,15 +63,16 @@
       text-decoration: none;
       transition: color 0.3s ease;
     }
+
     a:hover, a:focus {
       color: #00ffff;
       text-decoration: underline;
     }
 
-    /* Phishing email container styled like Outlook */
+    /* Email Sample Styles */
     .email-sample {
       background-color: #ffffff;
-      color: #1b1b1b;
+      color: #000000;
       max-width: 600px;
       margin: 2rem auto;
       border: 1px solid #dcdcdc;
@@ -81,44 +84,25 @@
       box-shadow: 0 4px 12px rgba(0,0,0,0.15);
     }
 
-    .email-warning-banner {
-      background-color: #fff4ce;
-      color: #000;
-      padding: 12px 20px;
-      font-size: 14px;
-      border-bottom: 1px solid #e0e0e0;
-      font-weight: 600;
-    }
-
-    .email-header {
-      background-color: #f2f2f2;
-      padding: 12px 20px;
-      border-bottom: 1px solid #dcdcdc;
-    }
-
-    .email-header img {
-      vertical-align: middle;
-      width: 100px;
-      height: auto;
-    }
-
     .email-metadata {
       padding: 16px 20px;
       font-size: 13px;
       color: #000000;
+      font-weight: 500;
       border-bottom: 1px solid #e0e0e0;
     }
 
     .email-body {
       padding: 20px;
       font-size: 15px;
-      color: #000000;
       background-color: #ffffff;
-      }
-
+      font-weight: 400;
+    }
 
     .email-body p {
       margin-bottom: 1rem;
+      color: #000000;
+      font-weight: 400;
     }
 
     .email-body a.button {
@@ -132,17 +116,16 @@
       margin: 1rem 0;
       transition: background-color 0.3s ease;
     }
+
     .email-body a.button:hover,
     .email-body a.button:focus {
       background-color: #005a9e;
       outline: none;
     }
 
-    /* Fix for lists inside email sample (if needed) */
     .email-body ul, .email-body ol {
-      color: #1b1b1b;
+      color: #000000;
     }
-
   </style>
 </head>
 <body>
@@ -171,34 +154,31 @@
 
   <h2>Phishing Email Sample</h2>
 
-<div class="email-sample">
-  <!-- Metadata -->
-  <div class="email-metadata">
-    <strong>From:</strong> "JIRA Notifications" &lt;jira-notify@supportservices.com&gt;<br>
-    <strong>To:</strong> user@example.com<br>
-    <strong>Subject:</strong> Action Required Immediately: Password Reset Request<br>
-    <strong>Date:</strong> Tue, 11 June 2024 08:34:27 -0800
+  <div class="email-sample">
+    <div class="email-metadata">
+      <strong>From:</strong> "JIRA Notifications" &lt;jira-notify@supportservices.com&gt;<br>
+      <strong>To:</strong> user@example.com<br>
+      <strong>Subject:</strong> Action Required Immediately: Password Reset Request<br>
+      <strong>Date:</strong> Tue, 11 June 2024 08:34:27 -0800
+    </div>
+
+    <div class="email-body">
+      <p>Dear User,</p>
+
+      <p>We detected suspicious activity on your account. Please reset your password immediately to avoid suspension.</p>
+
+      <p>
+        <a href="http://secure-support-reset.com/login?user=example" target="_blank" rel="noopener noreferrer" class="button">
+          Reset Password
+        </a>
+      </p>
+
+      <p>If you did not request this, please ignore this message.</p>
+
+      <p>Best regards,<br />
+      <strong>JIRA Support Team</strong></p>
+    </div>
   </div>
-
-  <!-- Email body -->
-  <div class="email-body">
-    <p>Dear User,</p>
-
-    <p>We detected suspicious activity on your account. Please reset your password immediately to avoid suspension.</p>
-
-    <p>
-      <a href="http://secure-support-reset.com/login?user=example" target="_blank" rel="noopener noreferrer" class="button">
-        Reset Password
-      </a>
-    </p>
-
-    <p>If you did not request this, please ignore this message.</p>
-
-    <p>Best regards,<br />
-    <strong>JIRA Support Team</strong></p>
-  </div>
-</div>
-
 
   <h2>Key Findings</h2>
   <ul>
@@ -215,6 +195,10 @@
     <li>Be cautious of fear-based or urgent language in messages.</li>
     <li>Educate teams regularly on identifying suspicious communications.</li>
   </ul>
+
+</body>
+</html>
+
 
 </body>
 </html>
