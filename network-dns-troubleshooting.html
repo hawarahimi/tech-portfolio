@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DNS Troubleshooting Case Study</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0d1117;
+      color: #c9d1d9;
+      margin: 0;
+      padding: 2rem;
+      line-height: 1.6;
+    }
+
+    a.back-link {
+      display: inline-block;
+      margin-bottom: 1.5rem;
+      color: #4ee1ff;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+
+    a.back-link:hover, a.back-link:focus {
+      color: #00ffff;
+      text-decoration: underline;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #4ee1ff;
+      text-align: center;
+      margin-bottom: 1.5rem;
+      text-shadow: 0 0 8px #4ee1ff;
+    }
+
+    h2 {
+      font-size: 1.6rem;
+      color: #39c0ed;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      border-bottom: 2px solid #39c0ed;
+      padding-bottom: 0.25rem;
+    }
+
+    p {
+      font-size: 1.1rem;
+    }
+
+    ul, ol {
+      margin-left: 1.5rem;
+      color: #8ab8f9;
+    }
+
+    code {
+      background-color: #1e293b;
+      color: #7fffd4;
+      padding: 0.2rem 0.4rem;
+      border-radius: 4px;
+      font-family: 'Source Code Pro', monospace;
+      font-size: 0.95rem;
+    }
+
+    pre {
+      background-color: #011627;
+      color: #7fffd4;
+      padding: 1rem;
+      border-radius: 8px;
+      font-size: 0.95rem;
+      overflow-x: auto;
+      margin-top: 0.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-link">← Back to Portfolio</a>
+
+  <h1>DNS Troubleshooting Case Study</h1>
+
+  <p>This project demonstrates how I diagnosed and resolved a DNS configuration issue that was preventing a remote employee from accessing internal company websites. Internet access was functional, but internal tools remained unreachable due to incorrect DNS settings.</p>
+
+  <h2>Objective</h2>
+  <ul>
+    <li>Identify causes of internal domain resolution failures</li>
+    <li>Restore access to internal tools while maintaining internet connectivity</li>
+    <li>Improve reliability of DNS settings for remote users</li>
+  </ul>
+
+  <h2>Symptoms</h2>
+  <ul>
+    <li>Public websites like Google and YouTube loaded normally</li>
+    <li>Internal tools like <code>intranet.company.local</code> failed to load</li>
+    <li><code>ping</code> and <code>nslookup</code> for internal domains timed out</li>
+  </ul>
+
+  <h2>Investigation</h2>
+  <ol>
+    <li>Confirmed internet connectivity was working</li>
+    <li>Ran <code>nslookup intranet.company.local</code> – response: “DNS request timed out”</li>
+    <li>Checked settings with <code>ipconfig /all</code> – DNS was set to <code>8.8.8.8</code></li>
+    <li>Pinged internal DNS server at <code>10.0.0.5</code> – successful</li>
+  </ol>
+
+  <h2>Resolution</h2>
+  <ul>
+    <li>Updated DNS server address to <code>10.0.0.5</code> in network settings</li>
+    <li>Flushed local DNS cache using: <br>
+      <pre>ipconfig /flushdns</pre>
+    </li>
+    <li>Verified success with: <br>
+      <pre>nslookup intranet.company.local</pre>
+    </li>
+    <li>Internal tools loaded successfully</li>
+  </ul>
+
+  <h2>Lessons Learned</h2>
+  <ul>
+    <li>DNS issues can block internal resources without affecting general browsing</li>
+    <li><code>nslookup</code> is a powerful tool to diagnose DNS failures</li>
+    <li>Remote employees should use company DNS servers for full functionality</li>
+  </ul>
+
+</body>
+</html>
