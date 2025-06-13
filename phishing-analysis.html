@@ -45,39 +45,60 @@
   <section>
     <h1>Phishing Email Analysis</h1>
 
-    <p>In this project, I analyzed a phishing email to show how attackers exploit user trust, manipulate attention, and bypass basic filters. The goal was to break down the threat elements and offer insights for everyday users and IT teams.</p>
+<p>In this project, I analyzed a phishing email to show how attackers exploit user trust, manipulate attention, and bypass basic filters. The goal was to break down the threat elements and offer insights for everyday users and IT teams.</p>
 
-    <h2>Objective</h2>
-    <ul>
-      <li>Understand phishing attack structure</li>
-      <li>Identify spoofed sender details and malicious URLs</li>
-      <li>Document social engineering techniques</li>
-      <li>Provide clear, actionable recommendations</li>
-    </ul>
+<h2>Sample Phishing Email</h2>
+<pre style="background:#1e1e1e; color:#81d4fa; padding:1rem; border-radius:8px; overflow-x:auto;">
+From: jira-notification@secure-update.com
+To: employee@example.com
+Subject: Immediate Action Required: JIRA Account Password Reset
 
-    <h2>Methodology</h2>
-    <ol>
-      <li>Selected a phishing simulation email from <a href="http://caniphish.com/email-phishing-simulator?email=JIRA-Notification" target="_blank">CanIPhish</a>.</li>
-      <li>Inspected sender email headers and reply-to addresses.</li>
-      <li>Hovered over and traced embedded links for redirection or mismatches.</li>
-      <li>Recognized urgency, impersonation, and manipulation tactics.</li>
-    </ol>
+Dear Employee,
 
-    <h2>Key Findings</h2>
-    <ul>
-      <li><strong>Sender Spoofing:</strong> The sender’s email domain mimicked a trusted service but originated from an unrelated server.</li>
-      <li><strong>Deceptive Links:</strong> URLs were shortened or disguised to appear legitimate, but redirected to suspicious destinations.</li>
-      <li><strong>Social Engineering:</strong> The message used urgency (“Action required immediately”) and impersonated internal tools like JIRA.</li>
-      <li><strong>Missing Personalization:</strong> The email lacked specific user references, which is a typical phishing sign.</li>
-    </ul>
+Our security system has detected unusual login attempts on your JIRA account. To protect your data, please reset your password within the next 24 hours.
 
-    <h2>Lessons Learned</h2>
-    <ul>
-      <li>Check email headers and don’t trust display names alone.</li>
-      <li>Hover over links and compare visible text to the actual URL.</li>
-      <li>Be wary of fear-based or urgent language in messages.</li>
-      <li>Educate teams regularly on identifying suspicious communications.</li>
-    </ul>
+Reset your password here:  
+http://secure-update-jira.com/reset-password
+
+Failure to reset your password will result in temporary suspension of your account.
+
+Thank you for your prompt attention.
+
+Best regards,  
+JIRA Security Team
+</pre>
+
+<h2>Objective</h2>
+<ul>
+  <li>Understand phishing attack structure</li>
+  <li>Identify spoofed sender details and malicious URLs</li>
+  <li>Document social engineering techniques</li>
+  <li>Provide clear, actionable recommendations</li>
+</ul>
+
+<h2>Methodology</h2>
+<ol>
+  <li>Reviewed the email headers and sender domain for inconsistencies.</li>
+  <li>Examined the link to check for suspicious redirects and mismatched URLs.</li>
+  <li>Analyzed the language used to identify urgency and impersonation tactics.</li>
+  <li>Compared message personalization and legitimacy cues.</li>
+</ol>
+
+<h2>Key Findings</h2>
+<ul>
+  <li><strong>Sender Spoofing:</strong> The sender domain <code>secure-update.com</code> is unrelated to the official JIRA domain.</li>
+  <li><strong>Deceptive Links:</strong> The link directs to <code>secure-update-jira.com</code>, which is not a verified Atlassian site.</li>
+  <li><strong>Social Engineering:</strong> The email uses urgency (“Immediate Action Required”) to prompt quick user response.</li>
+  <li><strong>Missing Personalization:</strong> The greeting is generic (“Dear Employee”) instead of using the recipient’s name.</li>
+</ul>
+
+<h2>Lessons Learned</h2>
+<ul>
+  <li>Always verify sender email domains, not just display names.</li>
+  <li>Hover over links to inspect actual URLs before clicking.</li>
+  <li>Be cautious of urgent language designed to pressure quick action.</li>
+  <li>Regular security awareness training helps users spot these red flags.</li>
+</ul>
 
     <p>🔗 <a href="index.html">← Back to Portfolio Home</a></p>
   </section>
